@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Email</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <![if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]>
+    <style>
+
+      .col-sm-6{
+        width           : 40%;
+        text-align      : center;
+        margin          : 5%;
+        margin-top      : 20px;
+        margin-bottom   : 5px;
+      }
+
+      #mail{
+        top             : 50px
+      }
+
+      #inbox{
+        top             : 20px;
+      }
+
+      #aol{
+        top             : 100px;
+      }
+      #hotmail{
+        left            : 30px;
+        top             :-20px;
+      }
+
+      html body{
+        background-color: #4C4D4E;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><span style="color:#51B64E;">Ames</span><span style="color:#e7e7e7;">PublicLibrary</span></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="main.html">Home</a></li>
+
+        </ul>
+        <form method=GET action="http://www.google.com/custom?q=&btnG=Search">
+        <input type=hidden name=ie value=UTF-8>
+        <input type=hidden name=oe value=UTF-8>
+
+
+        <img SRC="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Transparent_google_logo.png/250px-Transparent_google_logo.png"
+        border="0" width="80" height="35"  vertical-align="middle"></A>
+        <input TYPE=text name=q size=25 maxlength=100 value="" style="margin-top:15px;">
+
+        <input class="btn btn-default" type=submit name=sa value="Email Search">
+      </div>
+    </nav>
+
+
+    <div class="container-fluid" style="background-color:#4c4d4e;">
+      <div class="row text-center" style="margin:2.5%;">
+
+        <div class="col-sm-4" id="gmail">
+          <a href="http://www.gmail.com/"><img style="width:300px;height:300px;" src="Backgrounds/Mail/gmail.png" alt="gmail"/></a>
+        </div>
+
+        <div class="col-sm-4" id="ol">
+          <a href="https://login.live.com/"><img style="width:300px;height:300px;" src="Backgrounds/Mail/outlook.png" alt="outlook"/></a>
+        </div>
+
+        <div class="col-sm-4" id="yahoo">
+          <a href="https://login.yahoo.com/"><img style="width:300px;height:300px;" src="Backgrounds/Mail/yahoo.png" alt="yahoo"/></a>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-3" id="hotmail">
+          <a href="https://login.live.com/"><img src="Backgrounds/Mail/hotmail.png" alt="hotmail"/></a>
+        </div>
+
+        <div class="col-sm-3" id="mail">
+          <a href="https://www.mail.com/mail/#.7518-header-nav1-1"><img src="Backgrounds/Mail/mail.png" alt="mail.com"/></a>
+        </div>
+
+        <div class="col-sm-3" id="inbox">
+          <a href="http://www.inbox.com/login.aspx?gdi=true"><img src="Backgrounds/Mail/inbox.png" alt="inbox"/></a>
+        </div>
+
+        <div class="col-sm-3" id="aol">
+          <a href="https://my.screenname.aol.com/_cqr/login/login.psp?sitedomain=sns.mail.aol.com&seamless=novl&lang=en&locale=US&authLev=0&siteState=sid%3A39913885-aa3a-4a6b-80de-a1b1d9bf9073%7Cqp%3Aicid%3Daol.com-nav%7Cld%3Amail.aol.com%7Cuv%3AAOL%7Cat%3ASNS%7Clc%3Aen_US%7Crt%3ASTD%7Csnt%3AScreenName%7C&offerId=newmail-en-us-v2">
+            <img class="img-rounded" src="Backgrounds/Mail/aol.png" alt="aol"/></a>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

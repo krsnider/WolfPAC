@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Instructional Page</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    .jumbotron{
+      width           : 80%;
+      margin          : 10%;
+      padding         : 10px;
+      margin-top      : 10px;
+      margin-bottom   : 10px;
+      background-color: #51B64E;
+    }
+
+    p{
+      font-size       : 1.5em;
+      font-family     : Georgia, serif;
+      color           : #e7e7e7;
+      line-height     : 30px;
+      margin          : 15%;
+      margin-top      : 25px;
+      margin-bottom   : 25px;
+      width           : 70%;
+      border-style    : solid dashed;
+      border-color    : #51B64E;
+      border-width    : medium;
+      border-radius   : 15px;
+    }
+
+    #hf{
+      font-family     : Georgia, serif;
+      color           : #4c4d4e;
+    }
+
+    h2{
+      width           : 80%;
+      margin-left     : 10%;
+      margin-right    : 10%;
+      color           : #e7e7e7;
+    }
+
+    html body{
+      background-color: #4C4D4E;
+    }
+
+    strong{
+      color           : #51B64E;
+    }
+    #hfstrong{
+      color           : #4C4D4E;
+    }
+    </style>
+
+  </head>
+  <body background-color: #51B64E !important>
+
+    <div class="container-fluid text-center">
+      <div class="jumbotron text-center">
+        <h2 id="hf">When you are finished using this kiosk make sure you </br>
+          <em><strong id="hfstrong">always</strong></em> press the close button
+          <a href="#" data-toggle="popover" data-html="true" title="Try it Out!!" data-content="Clicking the X at the bottom of your screen
+          will clear your history and restart this browser so it's ready for someone else to use!"><img src="Backgrounds/X.png" alt="X Icon"></a>
+          at the bottom of the screen.
+        </h2>
+      </div>
+
+
+      <p>The <strong>time</strong> at the top and left is how much time you have left using this kiosk. The time to the right of that is the inactivity counter,</br> if either of these reach <strong>00:00</strong> the kiosk will <em>close</em> and <em>restart</em> itself.</br></br>
+
+        It has buttons for going <strong>back</strong> and <strong>forward</strong> between pages you've visited.</br></br>
+
+        It also has a button to <strong>refresh</strong> the page you're on and a <strong>home</strong> button which will take you back to this kiosks main page.</br></br>
+
+        The magnifying glass buttons let you <strong>zoom</strong> <em>in</em> and <em>out</em>. The percentage next to the inactivity counter is your zoom level.</br>The <em>normal</em> button sets the page to 100%.</br></br>
+
+        The <strong>Up</strong> and <strong>Down</strong> buttons let you <em>scroll</em> through pages, you can also scroll by <strong>swiping</strong> up and down on the screen.</br></br>
+
+        The last item on the right of the tool bar is the X button that <strong>closes</strong> this browser and gets it ready for the next person.</br></br>
+        <em style="font-size:1.2em;">Closing this kiosk when you are done is <strong>essential</strong> in keeping your information and privacy safe and secure.</br>
+        Closing the kiosk will clear the history and wipe any information you may have entered while using it.</em></p>
+
+
+      <img src="Backgrounds/KioskBar.png" alt="NavBar Image">
+
+      <p>To leave this screen, hit the back button or home button on the navigation bar at the bottom of the screen.</p>
+
+      <div class="jumbotron text-center">
+        <h2 id="hf">When you are finished using this kiosk make sure you </br>
+          <em><strong id="hfstrong">always</strong></em> press the close button
+          <a href="#" data-toggle="popover" data-html="true" title="Try it Out!!" data-content="Clicking the X at the bottom of your screen
+          will clear your history and restart this browser so it's ready for someone else to use!"><img src="Backgrounds/X.png" alt="X Icon"></a>
+          at the bottom of the screen.
+        </h2>
+      </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+      });
+    </script>
+  </body>
+</html>

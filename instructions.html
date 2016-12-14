@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PAC Instructions</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <![if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]>
+
+    <style>
+
+      .button{
+        margin-top      : 50px !important;
+      }
+
+      .jumbotron{
+        width           : 80%;
+        margin          : 10%;
+        padding         : 10px;
+        margin-top      : 10px;
+        margin-bottom   : 10px;
+        background-color: #51B64E;
+      }
+
+      .container{
+        height          : 80%;
+        width           : 80%;
+        margin-bottom   : 20%;
+      }
+
+      .panel-heading{
+        color           : #ffffff !important;
+        background-color: #51B64E !important;
+      }
+
+      #weather{
+        height          : auto;
+        background-color: #4C4D4E;
+        border          : none;
+        height          : 100%;
+      }
+
+      .panel{
+        background-color: #51B64E;
+      }
+
+      .col-sm-3{
+        /*height: 320px;*/
+      }
+
+
+      html body{
+        background-color: #4C4D4E;
+      }
+
+      #rel{
+        position        : relative;
+        top             : 10px;
+        width           : 365px;
+        left            : 0px;
+        height          : 180px;
+        overflow-x      : hidden;
+      }
+
+      #iframeW{
+        position        : absolute;
+        top             : -190px !important;
+        left            : -95px !important;
+        width           : 550px;
+        height          : 351px;
+      }
+
+      #iframeE{
+        position        : absolute;
+        top             : -227px !important;
+        left            : -95px !important;
+        width           : 550px;
+        height          : 390px;
+      }
+
+      #head{
+        width           : 90%;
+        margin          : 5%;
+        margin-bottom   : 10px;
+        margin-top      : 10px;
+        background-color: #DFF0D8;
+        color           : #4C4D4E;
+        border          : 2px solid green;
+        border-color    : #51B64E;
+        border-radius   : 12px;
+        font-family     : Georgia, serif;
+      }
+
+      #CR{
+
+        height: 160px;
+      }
+
+      #button{
+        border-radius: 15px;
+      }
+
+      .container-fluid{
+        margin-bottom: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <!--  -->
+    <div id="libevents" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Library Events</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on our main page will take you to a list of events going on at the library, </br>hopefully you can come join us sometime!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Catalog -->
+    <div id="catalog" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Search our Catalog</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to our catalog homepage, here you can search for books, movies, games, or anything you might find here at the library.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- APL -->
+    <div id="apl" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Library Homepage</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to the Library's homepage, form there you can explore what we have to offer as well as find out more about us.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Online DB -->
+    <div id="onlineDB" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Online Databases</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to the list of online databases we offer.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tribune -->
+    <div id="tribune" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Ames Tribune</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to the homepage of the local newspaper, The Ames Tribune</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div id="emailModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">E-mail</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to a list of email clients you can use to check your email!</br>
+              If your email host isn't listed you can search for it using the search bar at the top of the window.</br>
+              <strong><em>Please make sure to log out of your email when you are done.</em></strong></br>
+              This will insure that your <strong>privacy</strong> is <em>safe</em> and <em>secure</em>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Weather -->
+    <div id="weatherModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Local Weather</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to an extended forecast for the Ames area if you desire. Otherwise it should stay up to date with the current weather conditions outside.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Room Reserve -->
+    <div id="reserveAroom" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Reserve a Room</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you you to our reserve a room page. Here you can seleect a room, date, and time to use when you need it, if it is not already resrved.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ACSD Events -->
+    <div id="acsde" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Ames Community School District Events</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to the Ames Community School District list of events.</br>
+            From here you can narrow down the list by schools.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CyRide -->
+    <div id="cyride" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Cyride</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking either of the CyRide links on this kiosk's main page will take you to their Plan a Route page.</br>
+            From here you can select what route you are looking for and which stop you want to know the next couple of arrival times for.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ISU Events -->
+    <div id="ISUE" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">ISU Events</h4>
+          </div>
+          <div class="modal-body">
+            <p>Clicking this on the kiosk main page will take you to Iowa State's list of all upcoming events.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  <div class="container-fluid">
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-sm-1 text-center" style="align:left;margin-left:0px;">
+          <!----> <img src="Backgrounds/InstructionSidebar.png"> <!-- -->
+        </div>
+
+        <div class="col-sm-10">
+          <a href="NavBarInstructions.html">
+            <div class="container-fluid text-center">
+              <div class="row-fluid">
+                <div class="col-sm-12" id="head">
+                  <h2>This is the <strong><em>instructional</em></strong> page!</br>
+                    Click here to find out how to use the <em style="color:red;">navigation</em> bar at the bottom.</h2>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="container-fluid">
+            <div class="row-fluid">
+
+
+
+
+
+
+
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#libevents">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Library Events</div>
+                    <img src="Backgrounds/AmesPLEvents.jpg" class="img-responsive" style="width:100%" alt="Ames PL Events">
+                  </div>
+                </button>
+              </div>
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#catalog">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Search Our Catalog</div>
+                    <img src="Backgrounds/Catalog.jpg" class="img-responsive" style="width:100%" alt="Catalog">
+                  </div>
+                </button>
+              </div>
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#apl">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Ames Public Library</div>
+                    <img src="Backgrounds/Amespl.jpg" class="img-responsive" style="width:100%" alt="Ames PL">
+                  </div>
+                </button>
+              </div>
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#onlineDB">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Online Databases</div>
+                    <img src="Backgrounds/AmesPLOnlineDB.jpg" class="img-responsive" style="width:100%" alt="Online Databases">
+                  </div>
+                </button>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row-fluid">
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#tribune">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Ames Tribune</div>
+                    <img src="Backgrounds/Tribune.jpg" class="img-responsive" style="width:100%" alt="Tribune">
+                  </div>
+                </button>
+              </div>
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#emailModal">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Email</div>
+                    <img src="Backgrounds/Mail.jpg" class="img-responsive" style="width:100%" alt="E-mail">
+                  </div>
+                </button>
+              </div>
+
+
+              <div class="col-sm-3 text-center">
+                <button data-toggle="modal" data-target="#weatherModal" style="width:300px;">
+                <div class="panel panel-success" style="pointer-events:none;" id="weather">
+                  <div class="panel-heading">Ames Weather</div>
+                  <div id="widget-container-current">
+                        <a href="http://www.accuweather.com" class="aw-widget-legal"></a>
+                        <div id="wcurcon" class="aw-widget-current eq-216 lt-280 lt-350 lt-479" data-locationkey="333081" data-unit="f" data-uid="awcc" style="display: block;"><style type="text/css">  .aw-icon-1-t {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-t.png)} .aw-icon-1-h {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-h.png)} .aw-icon-1-s {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-s.png)} .aw-icon-1-m {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-m.png)} .aw-icon-1-l {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-l.png)} .aw-icon-1-xl {background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/01-xl.png)} </style><script type="text/javascript">      var awxWidgetInfo = awxWidgetInfo || {};      awxWidgetInfo.awcc = {};      awxWidgetInfo.awcc.userInfo = {      country: 'US',          city: "Ames",      state: 'IA',      metro: '',      zip: '50010',      fcode: 'AMW',      partner: 'accuweather',      sessionPartner: 'accuweather',      referer: 'http://www.accuweather.com/en/free-weather-widgets/current',      lang: 'en-us',      langid: '1',      lat: '42.03',      lon: '-93.62',      dma: '679',      ip: '165.206.230.66',      ipLocation: '',      sessionViews: 13,      geo_dma: '679',      geo_city: 'Indianola',      geo_state: 'IA',      geo_zip: '50125',      geo_country: 'US'      };      awxWidgetInfo.awcc.wxInfo = {      nwsalrt: '',          hdln: '',      ut: '',      cu: { wx: '', hi: '', wd: '', hd: '', uv: '' },      fc: [{wx: '', hi: '', lo: ''}],          ix: {},      mcpct: "1"        };</script><div class="aw-widget-current-inner"><div class="aw-widget-content bg-su"><a id="link_current" href="http://www.accuweather.com/en/us/ames-ia/50010/weather-forecast/333081" target="_blank" class="aw-current-weather"><div class="aw-current-weather-inner"><h3>Ames, IA</h3><span class="aw-icon aw-icon-1-l" data-icon="1"></span><p class="aw-temp-time-desc"><span class="aw-temperature-today"><b>58<sup>°</sup></b></span><time>10:38 am CDT</time>    				<span class="aw-weather-description">Sunny</span></p></div>        		</a></div></div>  </div>
+                        <script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+
+                  </div>
+                </div>
+                </button>
+              </div>
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#reserveAroom">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Schedule a Room</div>
+                    <img src="Backgrounds/ReserveaMeetingRoom.jpg" class="img-responsive" style="width:100%" alt="Reserve a Room">
+                  </div>
+                </button>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row-fluid">
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#acsde">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Ames Community School District Events</div>
+                    <img src="Backgrounds/ACSDEvents.jpg" class="img-responsive" style="width:100%" alt="ACSDEvents">
+                  </div>
+                </button>
+              </div>
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#cyride">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">CyRide West</div>
+                    <img src="Backgrounds/cyride.png" class="img-responsive" style="width:100%" alt="Ames PL">
+                  </div>
+                </button>
+              </div>
+
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#cyride">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">Cyride East</div>
+                    <img src="Backgrounds/cyride.png" class="img-responsive" style="width:100%" alt="Ames PL">
+                  </div>
+                </button>
+              </div>
+
+
+
+
+
+              <div class="col-sm-3">
+                <button data-toggle="modal" data-target="#ISUE">
+                <div class="panel panel-success">
+                  <div class="panel-heading">Iowa State Events</div>
+                  <img src="Backgrounds/ISUEvents.jpg" class="img-responsive" style="width:100%" alt="ISU Events">
+                </div>
+              </button>
+            </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-1 text-center" style="align:left;margin-left:0px;">
+          <!----> <img src="Backgrounds/InstructionSidebar.png"> <!-- -->
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
